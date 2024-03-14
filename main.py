@@ -1,4 +1,5 @@
 import os
+import string
 from random import shuffle
 from pynput import keyboard
 from playsound import playsound
@@ -7,9 +8,7 @@ from playsound import playsound
 MUSIC_FOLDER = r"B:\code\键盘转音频\music"
 
 # 预处理
-key_list = [chr(i) for i in range(ord("a"), ord("z") + 1)]
-for n in range(10):
-    key_list.append(str(n))
+key_list = list(string.ascii_lowercase + string.digits)
 shuffle(key_list)
 
 # 读取音频文件
